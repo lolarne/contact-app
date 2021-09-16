@@ -2,6 +2,12 @@ import React from 'react';
 import './contact.scss';
 
 const Contact = ({ name, email, phone, isDeletable }) => {
+
+  const onPressDelete = (e) => {
+    e.preventDefault();
+    return alert("deleted");
+  }
+
   return (
     <div className="listContainer">
       <ul>
@@ -13,7 +19,7 @@ const Contact = ({ name, email, phone, isDeletable }) => {
           </div>
           {isDeletable === true ? null : (
             <div>
-              <button>Supprimer</button>
+              <button onClick={(e) => onPressDelete(e)}>Supprimer</button>
             </div>
           )}
         </li>
