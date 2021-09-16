@@ -1,23 +1,25 @@
 import React from 'react';
+import contactInfo from '../ContactInfo.jsx';
 import './contact.scss';
 
-const Contact = ({ name, email, phone, isDeletable }) => {
-  console.log({ name }, { email }, { phone });
+const Contact = () => {
   return (
     <div className="listContainer">
       <ul>
-        <li>
-          <div>
-            <h3>{name}</h3>
-            <h4>{email}</h4>
-            <h4>{phone}</h4>
-          </div>
-          {isDeletable === 'true' ? null : (
+        {contactInfo.map((user, userKey) => (
+          <li key={userKey}>
             <div>
-              <button>Supprimer</button>
+              <h3>{user.name}</h3>
+              <h4>{user.email}</h4>
+              <h4>{user.phone}</h4>
             </div>
-          )}
-        </li>
+            {user.isDeletable === true ? null : (
+              <div>
+                <button>Supprimer</button>
+              </div>
+            )}
+          </li>
+        ))}
       </ul>
     </div>
   );
