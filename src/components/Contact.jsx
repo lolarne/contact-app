@@ -10,7 +10,6 @@ const Contact = ({ name, email, phone, isDeletable }) => {
 
   return (
     <div className="listContainer">
-      <ul>
         <li>
           <div>
             <h3>{name}</h3>
@@ -23,8 +22,6 @@ const Contact = ({ name, email, phone, isDeletable }) => {
             </div>
           )}
         </li>
-
-      </ul>
     </div>
   );
 };
